@@ -16,8 +16,6 @@ async def test_mux(dut):
     await Timer(1, units="ns")
     dut.inp13.value = 3
     await Timer(1, units="ns")
-    dut.inp12.value = 0
-    await Timer(1, units="ns")
     dut._log.info("my out is %s", dut.out.value)
     assert dut.out.value == dut.inp12.value, "could be sel13 because same sel bits assigned for both"
     assert dut.out.value == dut.inp13.value, "could be sel12 because same sel bits assigned for both"
