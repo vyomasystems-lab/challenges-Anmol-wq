@@ -11,9 +11,9 @@ async def test_mux(dut):
     
 
     dut.sel.value = 13
-    await Timer(1, units="ns")
+#    await Timer(1, units="ns")
     dut.inp12.value = 2
-    await Timer(1, units="ns")
+#    await Timer(1, units="ns")
     dut.inp13.value = 3
     await Timer(1, units="ns")
     dut._log.info("my out is %s", dut.out.value)
