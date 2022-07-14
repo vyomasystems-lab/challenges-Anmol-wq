@@ -10,13 +10,13 @@ async def test_mux(dut):
 
     
 
-    dut.sel.value = "01101"
+    dut.sel.value = 13
     await Timer(1, units="ns")
-    dut.inp12.value = "01"
+    dut.inp12.value = 2
     await Timer(1, units="ns")
-    dut.inp13.value = "11"
+    dut.inp13.value = 3
     await Timer(1, units="ns")
-    dut.inp12.value = "00"
+    dut.inp12.value = 0
     await Timer(1, units="ns")
     dut._log.info("my out is %s", dut.out.value)
     assert dut.out.value == dut.inp12.value, "could be sel13 because same sel bits assigned for both"
