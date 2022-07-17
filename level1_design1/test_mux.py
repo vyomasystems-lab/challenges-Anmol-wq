@@ -4,7 +4,7 @@ import cocotb
 from cocotb.triggers import Timer
 
 @cocotb.test()
-async def test_mux(dut):
+async def test_mux(dutt):
     """Test for mux2"""
     dut.sel.value = 13
 #    await Timer(1, units="ns")
