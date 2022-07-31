@@ -53,4 +53,4 @@ async def test_mux(dut):
 
             dut._log.info(f'Selection={i} model={int(input[i])} DUT={int(dut.out.value)}')
             #cocotb.log.info('##### CTB: Develop your test here ########')
-            assert dut.out.value == input[i], f"Randomised test failed with: Selction {dut.sel.value} and corrsponding inputline {input[i]} and output {dut.out.value}"
+            assert dut.out.value == input[i], f"Randomised test failed with: Selction {dut.sel.value} and  output {dut.out.value}"
