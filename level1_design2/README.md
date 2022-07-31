@@ -3,6 +3,7 @@ The value assign to the input using:
 For Bug 1
 
 ![image](https://user-images.githubusercontent.com/73732594/182031550-5bbf9291-eda2-4e80-adb1-eccb1cb241a7.png)
+
 For Bug 2
 
 ![image](https://user-images.githubusercontent.com/73732594/182031582-8c8361fb-f05c-4a0c-9a25-0de96e7f81db.png)
@@ -10,6 +11,7 @@ For Bug 2
 
 The assertion error seen 
 For Bug 1
+
 ![image](https://user-images.githubusercontent.com/73732594/182031773-2e18f68c-883c-4bd7-ab2a-5dab8f6de63b.png)
 
 For Bug 2
