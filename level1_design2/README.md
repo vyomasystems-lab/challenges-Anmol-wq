@@ -37,6 +37,7 @@ For Bug 2
 # Design Bug
  Based on above test input and analysing the design we see following
 For Bug 1
+
 ![image](https://user-images.githubusercontent.com/73732594/182032461-bb0d5633-c64e-4fbc-8a08-6093b1f0b665.png)
 
 
@@ -51,4 +52,11 @@ For the design, at the place of  'next_state = IDLE' it should be  'next_state =
 # Design Fix
 
 Updating the design and rerunning the test the test pass
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/73732594/182032795-4c6c6136-4fff-4013-b3d5-2bcee2b2b64b.png)
+
 
