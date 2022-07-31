@@ -15,6 +15,7 @@ For Bug 1
 ![image](https://user-images.githubusercontent.com/73732594/182031773-2e18f68c-883c-4bd7-ab2a-5dab8f6de63b.png)
 
 For Bug 2
+
 ![image](https://user-images.githubusercontent.com/73732594/182031805-d0f8866d-4315-49e4-a303-5cad868cac58.png)
 
 
