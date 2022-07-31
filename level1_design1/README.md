@@ -24,6 +24,13 @@ Observed output in dut.out.value= 00  (for selection line 12)
 
 ![image](https://user-images.githubusercontent.com/73732594/182030468-80aee04b-059b-49ca-ac1e-98a32f2bb297.png)
 
-For the design, at the place of 5'b01101: out = inp12, it should be 5'b01100: out = inp12;
+For the design, at the place of 5'b01101: out = inp12, it should be 5'b01100: out = inp12
+
+# Design Fix
+
+Updating the design and rerunning the test the test pass
+
+![image](https://user-images.githubusercontent.com/73732594/182030715-97feee16-f489-4ac2-9d2f-1162e4663ac1.png)
+
 
 
