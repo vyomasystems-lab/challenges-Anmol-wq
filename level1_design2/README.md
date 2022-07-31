@@ -45,6 +45,7 @@ For the design, at the place of  'next_state = IDLE' it should be  'next_state =
 For Bug2
 
 ![image](https://user-images.githubusercontent.com/73732594/182032391-f45a6970-46ba-440f-a53d-7db92e3460bc.png)
+
 For the design, at the place of  'next_state = IDLE' it should be  'next_state = SEQ_10
 
 # Design Fix
