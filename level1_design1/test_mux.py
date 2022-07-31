@@ -7,7 +7,7 @@ import random
 @cocotb.test()
 async def test_mux(dut):
     """Test for mux2"""
-    for i in range(31):
+    for i in range(15):
         
             in0 = random.randint(0, 3)
             in1 = random.randint(0, 3)
@@ -51,6 +51,6 @@ async def test_mux(dut):
 
             await Timer(2, units='ns')
 
-            dut._log.info(f'Selection={i} model={int(input[i])} DUT={int(dut.out.value)}')
+            dut._log.info(f'Selection={dut.sel.value} model={(input[i])} DUT={(dut.out.value)}')
             #cocotb.log.info('##### CTB: Develop your test here ########')
-            assert dut.out.value == input[i], f"Randomised test failed with: Selction {dut.sel.value} and  output {dut.out.value}"
+            assert dut.out.value == input[i], f"Test failed with: Selction {dut.sel.value} and  output {dut.out.value} but required output should be {input[i]}"
