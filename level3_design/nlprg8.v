@@ -30,23 +30,16 @@ module DIG_D_FF_AS_1bit
     end
 endmodule
 
-module nlprg8 (
+module nlprg3 (
   input clk,
   input rst,
-  output [7:0] o
+  output [2:0] o
 );
-  wire o0;
   wire o1;
-  wire o2;
-  wire o3;
-  wire o4;
-  wire o5;
-  wire o6;
-  wire o7;
   wire s0;
+  wire o0;
+  wire o2;
   wire s1;
-  wire s2;
-  wire s3;
   DIG_D_FF_AS_1bit #(
     .Default(0)
   )
@@ -62,7 +55,7 @@ module nlprg8 (
   )
   DIG_D_FF_AS_1bit_i1 (
     .Set( 1'b0 ),
-    .D( s1 ),
+    .D( o1 ),
     .C( clk ),
     .Clr( rst ),
     .Q( o2 )
@@ -72,71 +65,14 @@ module nlprg8 (
   )
   DIG_D_FF_AS_1bit_i2 (
     .Set( 1'b0 ),
-    .D( s2 ),
+    .D( s1 ),
     .C( clk ),
     .Clr( rst ),
     .Q( o1 )
   );
-  DIG_D_FF_AS_1bit #(
-    .Default(0)
-  )
-  DIG_D_FF_AS_1bit_i3 (
-    .Set( 1'b0 ),
-    .D( s3 ),
-    .C( clk ),
-    .Clr( rst ),
-    .Q( o3 )
-  );
-  DIG_D_FF_AS_1bit #(
-    .Default(0)
-  )
-  DIG_D_FF_AS_1bit_i4 (
-    .Set( 1'b0 ),
-    .D( o3 ),
-    .C( clk ),
-    .Clr( rst ),
-    .Q( o4 )
-  );
-  DIG_D_FF_AS_1bit #(
-    .Default(0)
-  )
-  DIG_D_FF_AS_1bit_i5 (
-    .Set( 1'b0 ),
-    .D( o4 ),
-    .C( clk ),
-    .Clr( rst ),
-    .Q( o5 )
-  );
-  DIG_D_FF_AS_1bit #(
-    .Default(0)
-  )
-  DIG_D_FF_AS_1bit_i6 (
-    .Set( 1'b0 ),
-    .D( o5 ),
-    .C( clk ),
-    .Clr( rst ),
-    .Q( o6 )
-  );
-  DIG_D_FF_AS_1bit #(
-    .Default(0)
-  )
-  DIG_D_FF_AS_1bit_i7 (
-    .Set( 1'b0 ),
-    .D( o6 ),
-    .C( clk ),
-    .Clr( rst ),
-    .Q( o7 )
-  );
-  assign o[0] = o0;
+  assign s0 = ~ ((o1 ^ o2) ^ o1);
+  assign s1 = (~ (o1 ^ o0) ^ ~ (o2 | o1));
+  assign o[0] = o1;
   assign o[1] = o1;
   assign o[2] = o2;
-  assign o[3] = o3;
-  assign o[4] = o4;
-  assign o[5] = o5;
-  assign o[6] = o6;
-  assign o[7] = o7;
-  assign s0 = ~ ((o6 ^ o7) ^ o3);
-  assign s2 = ((o4 ^ o5) ^ o0);
-  assign s1 = ((o3 ^ o6) ^ o1);
-  assign s3 = (~ (o3 ^ o2) ^ ((o1 & o0) & ((~ (o7 | o6) & ~ (o5 | o4)) & ~ o3)));
 endmodule
