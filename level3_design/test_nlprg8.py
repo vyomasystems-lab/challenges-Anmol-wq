@@ -7,7 +7,7 @@ from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge, FallingEdge
 
 @cocotb.test()
-async def test_nlprg8(dut):
+async def test_nlprg3(dut):
 
     clock = Clock(dut.clk, 10, units="us")  # Create a 10us period clock on port clk
     cocotb.start_soon(clock.start())        # Start the clock
@@ -17,28 +17,25 @@ async def test_nlprg8(dut):
     await FallingEdge(dut.clk)  
     dut.rst.value = 0
     await FallingEdge(dut.clk)
+    dut.rst.value = 1
+    await FallingEdge(dut.clk)  
+    dut.rst.value = 0
+    await FallingEdge(dut.clk)
 
-    for i in range(7):
+    # for i in range(2):
 
         
-        in0 = random.randint(0, 1)
-        in1 = random.randint(0, 1)
-        in2 = random.randint(0, 1)
-        in3 = random.randint(0, 1)
-        in4 = random.randint(0, 1)
-        in5 = random.randint(0, 1)
-        in6 = random.randint(0, 1)
-        in7 = random.randint(0, 1)
-        input=[in0,in1,in2,in3,in4,in5,in6,in7]
-        dut.o0.value = in0
-        dut.o1.value = in1
-        dut.o2.value = in2
-        dut.o3.value = in3
-        dut.o4.value = in4
-        dut.o5.value = in5
-        dut.o6.value = in6
-        dut.o7.value = in7
-        dut._log.info(f' DUT={dut.o[i].value} input={input[i]}')
-        assert dut.o[i].value==input[i]
-            
+    o0 = 0b0
+    o1 = 0b0
+    o2 = 0b0
+    
+    s0=~ ((o1 ^ o2) ^ o1)
+    s1= (~ (o1 ^ o0) ^ ~ (o2 | o1))
+    await RisingEdge(dut.clk)
+
+    
+    dut._log.info(f' DUT={dut.o.value} s0={dut.s0.value} s1={dut.s1.value} o2={dut.o2.value} o1={dut.o1.value} o0={dut.o0.value}')
+    assert dut.o.value==0b001,f'test fail with {dut.o.value} but it should be {0b001}'
+   
+        
 
