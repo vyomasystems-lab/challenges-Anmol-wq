@@ -18,18 +18,20 @@ The assertion error seen for one set of random input
 
  Output mismatched with expected output proving there is a design bug
 
-![image](https://user-images.githubusercontent.com/73732594/182030023-4df5be1d-bd32-44aa-b649-1c4d7394114e.png)
+
 
 # Design Bug
  Based on above test input and analysing the design we see following
 
-![image](https://user-images.githubusercontent.com/73732594/182030468-80aee04b-059b-49ca-ac1e-98a32f2bb297.png)
+![image](https://user-images.githubusercontent.com/73732594/182123590-57a3efb9-ebb1-446b-b513-e3ac5dba2c0c.png)
 
-For the design, at the place of 5'b01101: out = inp12, it should be 5'b01100: out = inp12
+
+For the design, at the place of 'assign o[0] = o1' it should be 'assign o[0] = o0'
 
 # Design Fix
 
 Updating the design and rerunning the test the test pass
 
-![image](https://user-images.githubusercontent.com/73732594/182030715-97feee16-f489-4ac2-9d2f-1162e4663ac1.png)
+![image](https://user-images.githubusercontent.com/73732594/182123907-d43d3dce-5f83-4c79-9a87-8383c6e4a4d3.png)
+
 
