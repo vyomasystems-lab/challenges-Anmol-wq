@@ -17,12 +17,15 @@ The assertion error seen after four clock cycle
 
 # Test Scenerio
 After one clock cycle
+
 *Expected output after one clock pulse: 001
 
 *Observed output in dut.out.value: 000 
 
 After Four clock cycle
+
 *Expected output after one clock pulse: 010
+
 *Observed output in dut.out.value: 111
 
 
